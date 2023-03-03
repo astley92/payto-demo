@@ -1,0 +1,7 @@
+.card.text-center.h-100 id="#{item.title.parameterize}-item"
+  .card-header= item.title
+  .card-body
+    = image_tag("items/#{item.image_filename}", size: "150", class: "ms-auto me-auto")
+    div.mb-2= item.formatted_price
+    - if show_buy_button
+      div= link_to "Buy", new_purchase_path(item_id: item.id), class: "btn btn-sm btn-success"

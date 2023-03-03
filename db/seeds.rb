@@ -5,3 +5,7 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+SettlementAccount.find_or_create_by!(account_name: "Blake Astley", account_number: "66928680", branch_code: "923100")
+Item.find_or_create_by!(title: "Zeptinghouse Smart Fridge", price_cents: 1, image_filename: "fridge.png")
+Item.find_or_create_by!(title: "Zeptoghini", price_cents: 1, image_filename: "lambo.png")

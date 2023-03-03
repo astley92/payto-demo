@@ -1,0 +1,71 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.sandbox.split.cash/payto/agreements
+    body:
+      encoding: UTF-8
+      string: '{"uid":"not valid","purpose":"retail","debtor":{"party_name":"Erlich
+        Bachman","account_identifier":{"type":"bban","value":"123456-876543"}},"creditor":{"party_name":"Jian
+        Yang","account_identifier":{"type":"bban","value":"654321-876342"}},"description":"TODO
+        pass this through","validity_end_date":"2023-03-07","payment_terms":{"type":"fixed","frequency":"adhoc","amount":123,"count":1}}'
+    headers:
+      Authorization:
+      - "<SOMETHING-SECRET>"
+      Content-type:
+      - application/json
+      Accept:
+      - application/json
+      User-Agent:
+      - Faraday v2.7.4
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      content-type:
+      - application/json; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      date:
+      - Sun, 05 Mar 2023 12:14:41 GMT
+      x-frame-options:
+      - SAMEORIGIN
+      x-xss-protection:
+      - 1; mode=block
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-permitted-cross-domain-policies:
+      - none
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      cache-control:
+      - no-cache
+      x-request-id:
+      - 25a6f0b3-74b7-4af3-ae83-4db8790bfe54
+      x-runtime:
+      - '0.054975'
+      vary:
+      - Origin
+      x-envoy-upstream-service-time:
+      - '57'
+      server:
+      - istio-envoy
+      x-cache:
+      - Error from cloudfront
+      via:
+      - 1.1 bc177ce25ddc555a7d303bc4d290a6ec.cloudfront.net (CloudFront)
+      x-amz-cf-pop:
+      - SYD62-P2
+      x-amz-cf-id:
+      - 58OrBYCcRyVRL7HromH3dm6-DTSGyVLH2cdnIJy_Ip3ajLnVpERMcw==
+    body:
+      encoding: UTF-8
+      string: '{"errors":[{"title":"Validation Failed","detail":"The value for `uid`
+        is in invalid format"}]}'
+  recorded_at: Sun, 05 Mar 2023 12:14:41 GMT
+recorded_with: VCR 6.1.0

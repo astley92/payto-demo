@@ -1,0 +1,9 @@
+nav.navbar.navbar-expand-lg.bg-body-tertiary id="navbar"
+  .container-fluid
+    a.navbar-brand[href="#"]
+      | PayTo Demo App
+    ul.navbar-nav.me-auto.mb-2.mb-lg-0
+      li.nav-item
+        = link_to "Items", items_path, class: "nav-link"
+      li.nav-item
+        = link_to "Admin Settings", settlement_account_path(SettlementAccount.last), class: "nav-link settings-nav-button"

@@ -1,0 +1,73 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.sandbox.split.cash/payto/payments
+    body:
+      encoding: UTF-8
+      string: '{"uid":"so_unique_3","agreement_uid":"so_unique_3","amount":123,"priority":"unattended","description":"TODO
+        pass this through"}'
+    headers:
+      Authorization:
+      - "<SOMETHING-SECRET>"
+      Content-type:
+      - application/json
+      Accept:
+      - application/json
+      User-Agent:
+      - Faraday v2.7.4
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      content-type:
+      - application/json; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      date:
+      - Sun, 05 Mar 2023 12:14:41 GMT
+      x-frame-options:
+      - SAMEORIGIN
+      x-xss-protection:
+      - 1; mode=block
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-permitted-cross-domain-policies:
+      - none
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      etag:
+      - W/"4624046e6a5f5185ca09baaec3a60329"
+      cache-control:
+      - max-age=0, private, must-revalidate
+      x-request-id:
+      - 84bc39b8-3d98-48dc-9503-c27592fef4cf
+      x-runtime:
+      - '0.086049'
+      vary:
+      - Origin
+      x-envoy-upstream-service-time:
+      - '88'
+      server:
+      - istio-envoy
+      x-cache:
+      - Miss from cloudfront
+      via:
+      - 1.1 c9801432acaf39452e5421e7eeabc4b0.cloudfront.net (CloudFront)
+      x-amz-cf-pop:
+      - SYD62-P2
+      x-amz-cf-id:
+      - j04coAj3RcSNgA3Y8-a5YGvtfN2OSr2zvCmTUhmPhSckH1BP-tmd4w==
+    body:
+      encoding: UTF-8
+      string: '{"data":{"uid":"so_unique_3","agreement_uid":"so_unique_3","state":"created","amount":123,"last_payment":null,"priority":"unattended","reference":null,"description":"TODO
+        pass this through","creditor":{"party_name":"Jian Yang","ultimate_party_name":"Jian
+        Yang","account_identifier":{"type":"bban","value":"654321-876342"}},"debtor":{"ultimate_party_name":"Erlich
+        Bachman","party_name":"Erlich Bachman","account_identifier":{"type":"bban","value":"123456-876543"}},"failure":null,"created_at":"2023-03-05T23:14:41+11:00","links":{"self":"https://api.sandbox.split.cash/payto/payments/so_unique_3","agreement":"https://api.sandbox.split.cash/payto/agreements/so_unique_3"}}}'
+  recorded_at: Sun, 05 Mar 2023 12:14:41 GMT
+recorded_with: VCR 6.1.0

@@ -1,0 +1,15 @@
+.row.row-cols-2.mt-4
+  .col
+    = render item, { show_buy_button: false }
+
+  .col
+    .card.h-100
+      .card-header.text-center
+        | Payment Details
+      .card-body id="purchase-card-body"
+        = simple_form_for Purchase.new do |f|
+          = f.hidden_field :item_id, value: item.id
+          = f.input :account_name, label: false, input_html: { placeholder: "Account Name", class: "form-control mb-2" }
+          = f.input :branch_code, label: false, input_html: { placeholder: "Branch Code", class: "form-control mb-2" }
+          = f.input :account_number, label: false, input_html: { placeholder: "Account Number", class: "form-control mb-4" }
+          = f.submit "Confirm Payment", class: "btn btn-sm btn-success"

@@ -1,0 +1,69 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.sandbox.split.cash/payto/payments
+    body:
+      encoding: UTF-8
+      string: '{"uid":"not valid","agreement_uid":"so_unique_3","amount":123,"priority":"unattended","description":"TODO
+        pass this through"}'
+    headers:
+      Authorization:
+      - "<SOMETHING-SECRET>"
+      Content-type:
+      - application/json
+      Accept:
+      - application/json
+      User-Agent:
+      - Faraday v2.7.4
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      content-type:
+      - application/json; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      date:
+      - Sun, 05 Mar 2023 12:14:42 GMT
+      x-frame-options:
+      - SAMEORIGIN
+      x-xss-protection:
+      - 1; mode=block
+      x-content-type-options:
+      - nosniff
+      x-download-options:
+      - noopen
+      x-permitted-cross-domain-policies:
+      - none
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      cache-control:
+      - no-cache
+      x-request-id:
+      - 9354dc0d-6275-42da-8f85-b6feb2800c17
+      x-runtime:
+      - '0.103516'
+      vary:
+      - Origin
+      x-envoy-upstream-service-time:
+      - '106'
+      server:
+      - istio-envoy
+      x-cache:
+      - Error from cloudfront
+      via:
+      - 1.1 1061288c3b70629c909a1e67ad3bde84.cloudfront.net (CloudFront)
+      x-amz-cf-pop:
+      - SYD62-P2
+      x-amz-cf-id:
+      - nw_948EOojk1Wbi9-WlSViWsetRGUOrBuc6u5Tz1oQz7DSeB8MtyFQ==
+    body:
+      encoding: UTF-8
+      string: '{"errors":[{"title":"Validation Failed","detail":"The value for `uid`
+        is in invalid format"}]}'
+  recorded_at: Sun, 05 Mar 2023 12:14:42 GMT
+recorded_with: VCR 6.1.0

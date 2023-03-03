@@ -1,0 +1,74 @@
+---
+http_interactions:
+  - request:
+      method: get
+      uri: https://api.sandbox.split.cash/payto/agreements/so_unique_3
+      body:
+        encoding: US-ASCII
+        string: ""
+      headers:
+        Authorization:
+          - "<SOMETHING-SECRET>"
+        Content-type:
+          - application/json
+        Accept:
+          - application/json
+        User-Agent:
+          - Faraday v2.7.4
+    response:
+      status:
+        code: 200
+        message: OK
+      headers:
+        content-type:
+          - application/json; charset=utf-8
+        transfer-encoding:
+          - chunked
+        connection:
+          - keep-alive
+        date:
+          - Mon, 06 Mar 2023 03:41:30 GMT
+        x-frame-options:
+          - SAMEORIGIN
+        x-xss-protection:
+          - 1; mode=block
+        x-content-type-options:
+          - nosniff
+        x-download-options:
+          - noopen
+        x-permitted-cross-domain-policies:
+          - none
+        referrer-policy:
+          - strict-origin-when-cross-origin
+        etag:
+          - W/"26df08f8ba854b8c2bcfcb1232b99e2f"
+        cache-control:
+          - max-age=0, private, must-revalidate
+        x-request-id:
+          - 59f9c04c-d840-4409-bd46-0134c63163a3
+        x-runtime:
+          - "0.155942"
+        vary:
+          - Origin
+        x-envoy-upstream-service-time:
+          - "168"
+        server:
+          - istio-envoy
+        x-cache:
+          - Miss from cloudfront
+        via:
+          - 1.1 4ab519b4cd27a1b8a4b258d7f39bbc7e.cloudfront.net (CloudFront)
+        x-amz-cf-pop:
+          - SYD62-P2
+        x-amz-cf-id:
+          - IXB_nqQWIepfcgTwon3Cy6I-SjNfVzTYWmpHL_gfIoNRNxnwS4FHEg==
+      body:
+        encoding: UTF-8
+        string:
+          '{"data":{"uid":"so_unique_3","failure":null,"state":"cancelled","created_at":"2023-03-05T23:14:41+11:00","purpose":"retail","resolution_requested_before":null,"payment_terms":{"type":"fixed","frequency":"adhoc","count":1,"max_amount":null,"amount":123,"first_payment_amount":null,"last_payment_amount":null,"first_payment_date":null,"last_payment_date":null},"debtor":{"party_name":"Erlich
+          Bachman","ultimate_party_name":"Erlich Bachman","account_identifier":{"type":"bban","value":"123456-876543"}},"creditor":{"party_name":"Jian
+          Yang","ultimate_party_name":"Jian Yang","account_identifier":{"type":"bban","value":"654321-876342"}},"initiator":{"name":"Blake
+          Astley Testing","legal_name":"Blake Astley Testing","abn":"01234567891"},"description":"TODO
+          pass this through","validity_start_date":"2023-03-05","validity_end_date":"2023-03-07","state_caused_by":"zepto_admin","links":{"self":"https://api.sandbox.split.cash/payto/agreements/so_unique_3"}}}'
+    recorded_at: Mon, 06 Mar 2023 03:41:30 GMT
+recorded_with: VCR 6.1.0

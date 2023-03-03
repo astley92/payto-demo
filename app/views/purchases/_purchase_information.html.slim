@@ -1,0 +1,15 @@
+div.text-center id="purchase-information"
+  - if purchase.created?
+    | We're creating an agreement to send to you
+  - elsif purchase.pending_consent?
+    | We've sent an agreement to the bank account. Please login into your online banking and confirm the PayTo agreement so we can process your payment
+  - elsif purchase.payment_processing?
+    | Thanks for confirming! We're processing the payment now.
+  - elsif purchase.complete?
+    | Payment processed, thanks for your purchase!
+  - elsif purchase.consent_failed?
+    | Something went wrong creating the agreement!
+  - elsif purchase.payment_failed?
+    | Something went wrong taking payment!
+  - else
+    | Something went wrong

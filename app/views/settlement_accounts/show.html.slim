@@ -1,0 +1,9 @@
+.card.h-100.mt-4
+  .card-header.text-center
+    | Settlement Account
+  .card-body id="purchase-card-body"
+    = simple_form_for settlement_account, url: settlement_account_path do |f|
+      = f.input :account_name, label: false, input_html: { placeholder: "Account Name", class: "form-control mb-2" }
+      = f.input :branch_code, label: false, input_html: { placeholder: "Branch Code", class: "form-control mb-2" }
+      = f.input :account_number, label: false, input_html: { placeholder: "Account Number", class: "form-control mb-4" }
+      = f.submit "Confirm", class: "btn btn-sm btn-success"

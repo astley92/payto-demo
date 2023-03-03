@@ -1,0 +1,6 @@
+
+section.mt-4 id="all-items"
+  .row.row-cols-2
+    - Item.all.each do |item|
+      .col
+        = render item, { show_buy_button: true }

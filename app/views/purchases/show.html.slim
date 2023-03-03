@@ -1,0 +1,12 @@
+= turbo_stream_from(dom_id(purchase))
+
+.row.row-cols-2.mt-4
+  .col
+    = render item, { show_buy_button: false }
+
+  .col
+    .card.h-100
+      .card-header.text-center
+        | Payment Details
+      .card-body
+        = render "purchase_information", { purchase: purchase }
