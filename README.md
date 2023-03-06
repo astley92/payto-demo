@@ -1,24 +1,22 @@
-# README
+# Getting Started
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+1. Add the required environment variables
+    ```bash
+    cat <<EOF >> config/application.yml
+    ZEPTO_ENVIRONMENT=sandbox
+    ZEPTO_API_KEY=your_key
+    ZEPTO_ADAPTER_CLASS=Zepto::TestAdapter
+    EOF
+    ```
+1. Bundle install
+    ```
+    bundle install
+    ```
+1. Create the db and seeds
+    ```bash
+    rails db:create && rails db:migrate && rails db:seed
+    ```
+1. Run the app
+    ```bash
+    overmind start -f Procfile.dev
+    ```
