@@ -3,9 +3,9 @@
 1. Add the required environment variables
     ```bash
     cat <<EOF >> config/application.yml
-    ZEPTO_ENVIRONMENT=sandbox
-    ZEPTO_API_KEY=your_key
-    ZEPTO_ADAPTER_CLASS=Zepto::TestAdapter
+    ZEPTO_ENVIRONMENT: sandbox
+    ZEPTO_API_KEY: your_key
+    ZEPTO_ADAPTER_CLASS: Zepto::TestAdapter
     EOF
     ```
 1. Bundle install
