@@ -1,9 +1,9 @@
 RSpec.describe "buying an item" do
   before do
     allow(Zepto::UIDGenerator).to receive(:call).and_return("my_test_agreement_123", "my_test_payment_456")
-    create :item, title: "Mac n Cheese", image_filename: "test/macncheese.png", price_cents: 999
-    create :item, title: "Broccoli", image_filename: "test/broccoli.png", price_cents: 123
-    create :item, title: "Potato", image_filename: "test/potato.png", price_cents: 1
+    create :item, title: "Mac n Cheese", image_filename: "test/macncheese.png", price_cents: 999, description: "My cool description"
+    create :item, title: "Broccoli", image_filename: "test/broccoli.png", price_cents: 123, description: "My cool description"
+    create :item, title: "Potato", image_filename: "test/potato.png", price_cents: 1, description: "My cool description"
     create :settlement_account, id: "1"
   end
 
@@ -39,6 +39,7 @@ RSpec.describe "buying an item" do
     end
 
     expect(page).to have_text("Mac n Cheese")
+    expect(page).to have_text("My cool description")
     expect(page).to have_text("$9.99")
     expect(page).to have_text("Broccoli")
     expect(page).to have_text("$1.23")
