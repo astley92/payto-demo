@@ -9,6 +9,7 @@ class Command::Purchase::CreateAgreement
       purchase.update(state: :pending_consent)
       Command::Agreement::CheckForApproval.perform_async(agreement.id)
     else
+      pp response
       purchase.update(state: :consent_failed)
     end
   end

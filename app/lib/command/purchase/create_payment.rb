@@ -13,6 +13,7 @@ class Command::Purchase::CreatePayment
     if response.ok?
       Command::Payment::CheckForSettlement.perform_async(payment.id)
     else
+      pp response
       Purchase.update(purchase_id, state: :payment_failed)
     end
   end
